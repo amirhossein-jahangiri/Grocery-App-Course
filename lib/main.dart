@@ -6,6 +6,7 @@ import 'package:grocery_app_course/services/dark_theme_prefs.dart';
 import 'package:provider/provider.dart';
 
 import '/screens/home_screen.dart';
+import 'screens/btm_bar.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +47,7 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             title: 'Flutter Demo',
             theme: Styles.themeData(themeProvider.getDarkTheme, context),
-            home: const HomeScreen(),
+            home: const BottomBarScreen(),
           );
         }
       ),
