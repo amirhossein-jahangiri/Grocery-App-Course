@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: SwitchListTile(
           value: context.watch<DarkThemeProvider>().getDarkTheme,
-          title: Text('Change Theme'),
+          title: const Text('Change Theme'),
           onChanged: (bool value) {
             context.read<DarkThemeProvider>().setDarkTheme = value;
           },
