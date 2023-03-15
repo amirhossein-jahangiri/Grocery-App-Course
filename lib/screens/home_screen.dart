@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:grocery_app_course/provider/dark_theme_provider.dart';
 import 'package:grocery_app_course/services/utils.dart';
 import 'package:grocery_app_course/widgets/on_sale_widget.dart';
@@ -58,15 +59,37 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.blue,
             ),
           ),
-          SizedBox(
-            height: size.height * 0.24,
-            child: ListView.builder(
-              itemCount: 10,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return OnSaleWidget();
-              },
-            ),
+          Row(
+            children: <Widget>[
+              RotatedBox(
+                quarterTurns: -1,
+                child: Row(
+                  children: <Widget>[
+                    TextWidget(
+                      title: 'On sale'.toUpperCase(),
+                      textSize: 22,
+                      color: Colors.red,
+                      isTitle: true,
+                    ),
+                    const SizedBox(width: 5),
+                    const Icon(IconlyLight.discount, color: Colors.red,),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: SizedBox(
+                  height: size.height * 0.24,
+                  child: ListView.builder(
+                    itemCount: 10,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return OnSaleWidget();
+                    },
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
