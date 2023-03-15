@@ -12,68 +12,71 @@ class OnSaleWidget extends StatelessWidget {
     final theme = Utils(context).getTheme;
     Color color = Utils(context).color;
     Size size = Utils(context).getScreenSize;
-    return Material(
-      color: Theme.of(context).cardColor.withOpacity(0.9),
-      borderRadius: BorderRadius.circular(12.0),
-      child: InkWell(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Material(
+        color: Theme.of(context).cardColor.withOpacity(0.9),
         borderRadius: BorderRadius.circular(12.0),
-        onTap: () {},
-        child: Padding(
-          padding: const EdgeInsets.all(0.8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Image.network(
-                    'https://i.ibb.co/F0s3FHQ/Apricots.png',
-                    height: size.width * 0.22,
-                    fit: BoxFit.fill,
-                  ),
-                  Column(
-                    children: <Widget>[
-                      TextWidget(
-                        title: '1KG',
-                        textSize: 22,
-                        color: color,
-                        isTitle: true,
-                      ),
-                      const SizedBox(height: 6),
-                      Row(
-                        children: <Widget>[
-                          GestureDetector(
-                            onTap: () => print('OnSaleWidget.build'),
-                            child: Icon(
-                              IconlyLight.bag2,
-                              size: 22,
-                              color: color,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12.0),
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Image.network(
+                      'https://i.ibb.co/F0s3FHQ/Apricots.png',
+                      height: size.width * 0.22,
+                      fit: BoxFit.fill,
+                    ),
+                    Column(
+                      children: <Widget>[
+                        TextWidget(
+                          title: '1KG',
+                          textSize: 22,
+                          color: color,
+                          isTitle: true,
+                        ),
+                        const SizedBox(height: 6),
+                        Row(
+                          children: <Widget>[
+                            GestureDetector(
+                              onTap: () => print('OnSaleWidget.build'),
+                              child: Icon(
+                                IconlyLight.bag2,
+                                size: 22,
+                                color: color,
+                              ),
                             ),
-                          ),
-                          GestureDetector(
-                            onTap: () => print('OnSaleWidget.build'),
-                            child: Icon(
-                              IconlyLight.heart,
-                              size: 22,
-                              color: color,
+                            GestureDetector(
+                              onTap: () => print('OnSaleWidget.build'),
+                              child: Icon(
+                                IconlyLight.heart,
+                                size: 22,
+                                color: color,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const PriceWidget(),
-              const SizedBox(height: 5),
-              TextWidget(
-                title: 'Apricots',
-                textSize: 16,
-                color: color,
-                isTitle: true,
-              ),
-              const SizedBox(height: 5),
-            ],
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const PriceWidget(),
+                const SizedBox(height: 5),
+                TextWidget(
+                  title: 'Apricots',
+                  textSize: 16,
+                  color: color,
+                  isTitle: true,
+                ),
+                const SizedBox(height: 5),
+              ],
+            ),
           ),
         ),
       ),
