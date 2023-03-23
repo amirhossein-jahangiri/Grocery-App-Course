@@ -12,8 +12,8 @@ class HomeScreen extends StatefulWidget {
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
-}
 
+}
 class _HomeScreenState extends State<HomeScreen> {
   final List<String> _offerImage = [
     'assets/images/offers/Offer1.jpg',
@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final Utils utils = Utils(context);
     final themeState = utils.getTheme;
+    final Color color = utils.color;
     Size size = utils.getScreenSize;
     return Scaffold(
       body: Column(
@@ -90,6 +91,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ],
+          ),
+          const SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: <Widget>[
+                TextWidget(
+                  title: 'Our products',
+                  color: color,
+                  textSize: 22,
+                  isTitle: true,
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () {},
+                  child: TextWidget(
+                    title: 'Browse all',
+                    textSize: 20,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
