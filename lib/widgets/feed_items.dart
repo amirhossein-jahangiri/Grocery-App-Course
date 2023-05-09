@@ -71,9 +71,18 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const PriceWidget(),
+                    Flexible(
+                      flex: 4,
+                      child: PriceWidget(
+                        textPrice: _quantityTextController.text,
+                        salePrice: 500.0,
+                        price: 600.0,
+                        isOnSale: false,
+                      ),
+                    ),
                     const SizedBox(width: 8),
                     Flexible(
+                      flex: 2,
                       child: Row(
                         children: <Widget>[
                           FittedBox(
@@ -96,6 +105,9 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                               inputFormatters: <TextInputFormatter>[
                                 FilteringTextInputFormatter.digitsOnly,
                               ],
+                              onChanged: (value) {
+                                setState(() {});
+                              },
                             ),
                           ),
                         ],

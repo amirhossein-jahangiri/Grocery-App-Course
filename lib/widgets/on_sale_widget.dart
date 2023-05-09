@@ -62,7 +62,12 @@ class OnSaleWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                const PriceWidget(),
+                const PriceWidget(
+                  textPrice: '1',
+                  salePrice: 1.85,
+                  price: 220.0,
+                  isOnSale: true,
+                ),
                 const SizedBox(height: 5),
                 TextWidget(
                   title: 'Apricots',
