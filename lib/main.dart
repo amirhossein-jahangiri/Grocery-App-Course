@@ -6,6 +6,7 @@ import 'package:grocery_app_course/services/dark_theme_prefs.dart';
 import 'package:provider/provider.dart';
 
 import '/screens/home_screen.dart';
+import 'inner_screen/on_sale_screen.dart';
 import 'screens/btm_bar.dart';
 
 void main() {
@@ -49,6 +50,9 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             theme: Styles.themeData(themeProvider.getDarkTheme, context),
             home: const BottomBarScreen(),
+            routes: {
+              OnSaleScreen.routeName: (context) => const OnSaleScreen(),
+            },
           );
         }
       ),
