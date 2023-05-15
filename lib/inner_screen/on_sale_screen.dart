@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:grocery_app_course/widgets/on_sale_widget.dart';
 import 'package:grocery_app_course/widgets/text_widget.dart';
 
 import '/services/utils.dart';
@@ -43,7 +44,7 @@ class OnSaleScreen extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
         childAspectRatio: size.width / (size.height * 0.60),
-        children: List.generate(16, (index) => const FeedsWidget()),
+        children: List.generate(16, (index) => const OnSaleWidget()),
       ),
     );
   }
